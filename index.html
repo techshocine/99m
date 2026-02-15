@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>99M - مسلسلات رمضان 2026</title>
+    <style>
+        :root { --primary: #ff0000; --bg: #0b0b0b; --card: #141414; }
+        body { background: var(--bg); color: #fff; font-family: Arial, sans-serif; margin: 0; padding-bottom: 70px; }
+
+        /* --- شريط الأخبار المتحرك --- */
+        .ticker-wrap { background: rgba(255,0,0,0.1); border-bottom: 1px solid var(--primary); height: 45px; display: flex; align-items: center; overflow: hidden; }
+        .ticker-move { display: inline-block; white-space: nowrap; animation: ticker 40s linear infinite; padding-right: 100%; }
+        /* يتوقف عند اللمس */
+        .ticker-wrap:hover .ticker-move, .ticker-wrap:active .ticker-move { animation-play-state: paused; }
+        .ticker-item { display: inline-block; padding: 0 25px; cursor: pointer; font-size: 14px; }
+        .ticker-item span { color: var(--primary); font-weight: bold; border: 1px solid var(--primary); padding: 1px 4px; border-radius: 3px; margin-left: 5px; font-size: 11px; }
+        @keyframes ticker { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+
+        /* --- رسالة الحاسوب --- */
+        #desktop-msg { display: none; flex-direction: column; align-items: center; justify-content: center; height: 100vh; text-align: center; background: #000; padding: 20px; }
+        .tg-btn { background: #0088cc; color: white; padding: 15px 25px; text-decoration: none; border-radius: 50px; font-weight: bold; margin-top: 20px; }
+
+        /* --- شبكة الموبايل (نظام العمودين) --- */
+        #mobile-content { display: block; }
+        .logo { text-align: center; padding: 20px; font-size: 30px; color: var(--primary); font-weight: 900; }
+        
+        /* هذا هو الجزء الذي تم إصلاحه ليظهر عمودين دائماً */
+        .grid { 
+            display: grid !important; 
+            grid-template-columns: repeat(2, 1fr) !important; 
+            gap: 12px; 
+            padding: 10px; 
+        }
+
+        .card { background: var(--card); border-radius: 10px; overflow: hidden; border: 1px solid #222; transition: 0.3s; }
+        .card img { width: 100%; height: 210px; object-fit: cover; }
+        .card h4 { text-align: center; margin: 10px 0; font-size: 14px; color: #fff; }
+
+        /* إعلان بانر */
+        .ad-space { grid-column: span 2; background: #1a1a1a; height: 50px; text-align: center; line-height: 50px; font-size: 12px; color: #444; border-radius: 5px; }
+
+        /* شريط التليجرام */
+        .telegram-bar { position: fixed; bottom: 0; width: 100%; background: var(--primary); text-align: center; padding: 15px; font-weight: bold; z-index: 999; }
+        .telegram-bar a { color: white; text-decoration: none; }
+    </style>
+
+    <script>
+        // فحص نوع الجهاز
+        function checkDevice() {
+            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            if (!isMobile && window.innerWidth > 1024) {
+                document.getElementById('mobile-content').style.display = 'none';
+                document.getElementById('desktop-msg').style.display = 'flex';
+            }
+        }
+
+        // فتح الإعلان والتوجه للرابط
+        function openLink(url) {
+            window.open("رابط_ادستيرا_المباشر_هنا", "_blank");
+            setTimeout(() => { window.location.href = url; }, 100);
+        }
+
+        window.onload = checkDevice;
+    </script>
+</head>
+<body>
+
+    <div id="desktop-msg">
+        <h1 style="color:var(--primary);">الموقع متاح للهواتف فقط 📱</h1>
+        <p>يرجى الدخول من هاتفك لمشاهدة مسلسلات رمضان حصرياً.</p>
+        <a href="رابط_تليجرام_هنا" class="tg-btn">انضم لقناة التليجرام ⚡</a>
+    </div>
+
+    <div id="mobile-content">
+        
+        <div class="logo">99M.SITE</div>
+
+        <div class="ticker-wrap">
+            <div class="ticker-move">
+                <div class="ticker-item" onclick="openLink('ali-clay/episodes.html')"><span>جديد</span> مسلسل علي كلاي الحلقة 5 متوفرة الآن</div>
+                <div class="ticker-item" onclick="openLink('maddah/episodes.html')"><span>حصري</span> مسلسل المداح 5 الحلقة 3 بجودة عالية</div>
+                </div>
+        </div>
+
+        <h3 style="padding: 15px 15px 0 0;">📺 مسلسلات رمضان 2026</h3>
+
+        <div class="grid">
+            
+            <div class="ad-space">إعلان Adsterra 320x50</div>
+
+            <div class="card" onclick="openLink('ali-clay/episodes.html')">
+                <img src="posters/ali-clay.webp" alt="علي كلاي">
+                <h4>علي كلاي</h4>
+            </div>
+
+            <div class="card" onclick="openLink('maddah/episodes.html')">
+                <img src="posters/maddah.webp" alt="المداح">
+                <h4>المداح 5</h4>
+            </div>
+
+            <div class="card" onclick="openLink('arbaji/episodes.html')">
+                <img src="posters/arbaji.webp" alt="العربجي">
+                <h4>العربجي 2</h4>
+            </div>
+
+            <div class="card" onclick="openLink('dama/episodes.html')">
+                <img src="posters/dama.webp" alt="الدامة">
+                <h4>الدامة 2</h4>
+            </div>
+
+            </div>
+    </div>
+
+    <div class="telegram-bar">
+        <a href="رابط_تليجرام_هنا">تابع الحلقات الجديدة على تليجرام 🚀</a>
+    </div>
+
+</body>
+</html>
